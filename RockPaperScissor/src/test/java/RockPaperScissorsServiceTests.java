@@ -14,7 +14,7 @@ public class RockPaperScissorsServiceTests
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
 
-    private RockPaperScissorsService rockPaperScissorsService;
+    private RockPaperScissorsService service;
 
     private Player playerA, playerB;
 
@@ -34,8 +34,8 @@ public class RockPaperScissorsServiceTests
         expectedException.expectMessage("Player name cannot be null or empty");
 
         Player playerC = new Player(" ", null);
-        rockPaperScissorsService = new RockPaperScissorsService(rounds, playerA, playerC);
-        rockPaperScissorsService.startGame();
+        service = new RockPaperScissorsService(rounds, playerA, playerC);
+        service.startGame();
     }
 
     @Test
@@ -45,8 +45,8 @@ public class RockPaperScissorsServiceTests
         expectedException.expectMessage("Player name cannot be null or empty");
 
         Player playerC = new Player(null, null);
-        rockPaperScissorsService = new RockPaperScissorsService(rounds, playerA, playerC);
-        rockPaperScissorsService.startGame();
+        service = new RockPaperScissorsService(rounds, playerA, playerC);
+        service.startGame();
     }
 
     @Test
